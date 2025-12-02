@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shri Radha Krishna Jatri Nibas</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body{margin:0;font-family:Arial;background:#f7fbff;color:#0f172a}
+    header{background:#0b7dd6;color:#fff;padding:10px 0}
+    .container{max-width:1100px;margin:auto;padding:0 6px}
+    nav{display:flex;justify-content:space-between;align-items:center}
+    nav a{color:#fff;text-decoration:none;margin-left:16px;font-weight:600}
+    .menu-btn{display:none;background:#fff;color:#0b7dd6;border:0;padding:6px 10px;border-radius:6px;font-weight:600}
+
+    /* mobile menu */
+    #mobileMenu{display:none;flex-direction:column;background:blue;padding:10px;whidth:100%;}
+    #mobileMenu a{margin:12px 0;color:white;font-weight:600}
+
+
+    }
+    .hero h1{font-size:32px;text-shadow:1px 1px 4px #000}
+
+    marquee{background:#0b7dd6;color:#fff;padding:8px 0;font-weight:600;margin-bottom:20px}
+
+    .section{padding:30px 16px}
+    h2{margin-top:0;color:#0b7dd6}
+
+    iframe{width:100%;height:300px;border:0;border-radius:8px}
+
+    footer{background:#0b1220;color:#cbd5e1;padding:15px;text-align:center;margin-top:20px}
+
+    @media(max-width:700px){
+      nav a{display:none}
+      .menu-btn{display:block}
+    }
+
+/* Hero Banner Slider */
+    .hero{margin-top:1	px;position:relative;width:100%;height:450px;overflow:hidden;}
+    .slide{
+      position:absolute;width:100%;height:100%;
+      opacity:0;transition:opacity 1s ease-in-out;
+      background-size:cover;background-position:center;
+    }
+    .slide.active{opacity:1;}
+
+    .slide.anim1.active{animation:zoomIn 5s ease-in-out;}
+    .slide.anim2.active{animation:slideLeft 27s ease-in-out;}
+    .slide.anim3.active{animation:slideright 10s ease-in-out;}
+
+    @keyframes zoomIn{from{transform:scale(1.1);}to{transform:scale(1);}}
+   @keyframes fadeIn {
+  from { opacity: 15; }
+  to { opacity: 19; }
+}
+
+    @keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+
+    @media(max-width:768px){.hero{height:250px;}}
+    @media(max-width:480px){.hero{height:200px;}}
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div style="font-size:20px;font-weight:700">Shri Radha Krishna Yatri Nibas</div>
+        <button class="menu-btn" onclick="toggleMenu()">Menu ☰</button>
+        <div>
+<a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#gallery"><i class="fas fa-image"></i> Gallery</a>
+    <a href="#work"><i class="fas fa-briefcase"></i> Work Area</a>
+    <a href="#social"><i class="fas fa-share-alt"></i> Social Media</a>
+    <a href="#book"><i class="fas fa-calendar-check"></i> Book Now</a>
+    <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+        </div>
+      </nav>
+      <div id="mobileMenu">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#gallery"><i class="fas fa-image"></i> Gallery</a>
+    <a href="#work"><i class="fas fa-briefcase"></i> Work Area</a>
+    <a href="#social"><i class="fas fa-share-alt"></i> Social Media</a>
+    <a href="#book"><i class="fas fa-calendar-check"></i> Book Now</a>
+    <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+      </div>
+    </div>
+  </header>
+
+
+   <!-- Hero Banner Slider -->
+<div class="hero">
+
+<div class="slide anim1 active" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+  <div class="slide anim2" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+  <div class="slide anim3" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+
+
+<div class="slide anim1 active" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+  <div class="slide anim2" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+  <div class="slide anim3" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+
+
+
+
+</div>
+  
+  <marquee>★ Welcome to Shri Radha Krishna Yatri Nibas •  ★</marquee>
+
+
+
+  <footer>
+    © Shri Radha Krishna Jatri Nibas | All Rights Reserved
+  </footer>
+
+<script>
+  function toggleMenu(){
+    const m=document.getElementById('mobileMenu');
+    m.style.display=m.style.display==='flex'?'none':'flex';
+  }
+</script>
+
+ <!-- Floating Contact Button -->
+  <style>
+    .float-btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#2563eb; /* Smart Blue */
+      color:#fff;
+      width:60px;
+      height:60px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      font-size:30px;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(0,0,0,0.35);
+      z-index:9999;
+      transition:0.3s;
+    }
+    .float-btn:hover{background:#1d4ed8;transform:scale(1.08);}
+
+    .contact-box{
+      position:fixed;
+      bottom:90px;
+      right:20px;
+      background:#ffffff;
+      border-radius:12px;
+      width:200px;
+      padding:14px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.28);
+      display:none;
+      z-index:9999;
+      animation:pop 0.25s ease-out;
+    }
+
+    @keyframes pop{
+      from{transform:scale(0.8);opacity:0;}
+      to{transform:scale(1);opacity:1;}
+    }
+
+    .contact-box a{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin:8px 0;
+      padding:10px;
+      font-weight:600;
+      border-radius:8px;
+      text-decoration:none;
+      color:#fff;
+      transition:0.25s;
+    }
+
+    .call-btn{background:#16a34a;} /* Green */
+    .call-btn:hover{background:#15803d;}
+
+    .wa-btn{background:#22c55e;} /* Light WhatsApp Green */
+    .wa-btn:hover{background:#16a34a;}
+
+    .mail-btn{background:#ef4444;} /* Red */
+    .mail-btn:hover{background:#dc2626;}
+  </style>
+
+  <div class="float-btn" onclick="toggleContact()"><image src="https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-contact-us-mail-call-icons-golden-yellow-contact-us-mail-call-icons-yellow-118008332.jpg" width="55px"style="border-radius:30px;border:20px;"></div>
+  <div class="contact-box" id="contactBox">
+    <a href="tel:+910000000000" class="call-btn">📱 Call Now</a>
+    <a href="https://wa.me/910000000000" class="wa-btn">💬 WhatsApp</a>
+    <a href="mailto:example@mail.com" class="mail-btn">✉ Email</a>
+  </div>
+
+<script>
+  function toggleContact(){
+    const box=document.getElementById('contactBox');
+    box.style.display = box.style.display==='block' ? 'none' : 'block';
+  }
+</script>
+
+
+<!-- Popup Style -->
+<style>
+  .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    backdrop-filter: blur(4px);
+  }
+
+  .popup-box {
+    background: #ffffff;
+    width: 90%;
+    max-width: 350px;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    animation: popupScale 0.25s ease-out;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+
+  @keyframes popupScale {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .popup-box h2 {
+    margin: 0 0 10px;
+    color: #0b7dd6;
+    font-size: 22px;
+  }
+
+  .popup-box p {
+    color: #334155;
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .popup-btn {
+    background: #0b7dd6;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+  }
+</style>
+
+<!-- Popup HTML -->
+<div class="popup-overlay" id="sitePopup">
+  <div class="popup-box">
+    <h2>⏳ Website Update চলছে</h2>
+    <p>আমাদের ওয়েবসাইট বর্তমানে আপডেট হচ্ছে।  
+    কিছু সময় পর আবার চেষ্টা করুন।</p>
+    <button class="popup-btn" onclick="closePopup()">OK!</button>
+  </div>
+</div>
+
+<!-- Close Popup Script -->
+<script>
+  function closePopup(){
+    document.getElementById("sitePopup").style.display="none";
+  }
+</script>
+
+	
+
+</body>
+</html>	

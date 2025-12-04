@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shri Radha Krishna Yatri Nibas</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body{
+    margin:0;
+    font-family:Arial;
+    background:#f7fbff;
+    color:#0f172a;
+  }
+  header{
+    background:#0b7dd6;
+    color:#fff;
+    padding:10px 0;
+    position:relative;
+    z-index:1000;
+  }
+  .container{max-width:1100px;margin:auto;padding:0 6px}
+
+  nav{display:flex;justify-content:space-between;align-items:center}
+  nav a{color:#fff;text-decoration:none;margin-left:16px;font-weight:600}
+
+  .menu-btn{
+    display:none;
+    background:#fff;
+    color:#0b7dd6;
+    border:0;
+    padding:6px 10px;
+    border-radius:6px;
+    font-weight:600;
+  }
+
+  /* ---------- LEFT SLIDE MENU (Improved Hidden Effect) ---------- */
+  #sideMenu{
+    position:fixed;
+    top:0;
+    left:-85%;        /* আরও বেশি হাইড */
+    width:70%;
+    height:100%;
+    background:#0b7dd6;
+    padding:20px;
+    transition:0.4s ease-in-out;
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    opacity:0;         /* fade-out */
+    transform:translateX(-20px); /* sliding blur effect */
+  }
+  #sideMenu.open{
+    left:0;
+    opacity:1;
+    transform:translateX(0);
+  }
+
+  #sideMenu a{
+    color:white;
+    padding:14px 0;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.25);
+    font-weight:600;
+    font-size:17px;
+  }
+
+  /* overlay */
+  #overlay{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    z-index:9998;
+  }
+
+  @media(max-width:700px){
+    nav a{display:none}
+    .menu-btn{display:block}
+  }
+
+  /* ---------- HERO SLIDER ---------- */
+  .hero{
+    margin-top:1px;
+    position:relative;
+    width:100%;
+    height:450px;
+    overflow:hidden;
+    z-index:1;
+  }
+  .slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+    background-size:cover;
+    background-position:center;
+  }
+  .slide.active{opacity:1;}
+  @media(max-width:768px){.hero{height:250px;}}
+  @media(max-width:480px){.hero{height:200px;}}
+
+  marquee{background:#0b7dd6;color:#fff;padding:8px 0;font-weight:600;margin-bottom:20px}
+
+  .section{padding:30px 16px}
+  h2{margin-top:0;color:#0b7dd6}
+
+  footer{
+    background:#0b1220;color:#cbd5e1;
+    padding:15px;text-align:center;margin-top:20px
+  }
+  
+  
+  
+  two-box-area{
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 15px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+
+  .box{
+    flex:1;
+    min-height:180px;
+    padding:20px;
+    border-radius:12px;
+    background:#ffffff;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    font-size:18px;
+    font-weight:600;
+    color:#0b1220;
+  }
+
+  /* Mobile – Boxes up-down */
+  @media(max-width:768px){
+    .two-box-area{
+      flex-direction:column;
+    }
+  }
+
+  /* Desktop – Boxes side by side */
+  @media(min-width:769px){
+    .two-box-area{
+      flex-direction:row;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div style="font-size:20px;font-weight:700">Shri Radha Krishna Yatri Nibas</div>
+      <button class="menu-btn" onclick="openMenu()">Menu ☰</button>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#work">Work Area</a>
+        <a href="#social">Social Media</a>
+        <a href="#book">Book Now</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- LEFT SLIDE MENU -->
+<div id="sideMenu">
+  <a href="#home">🏠 Home</a>
+  <a href="#about">ℹ About</a>
+  <a href="#gallery">🖼 Gallery</a>
+  <a href="#work">💼 Work Area</a>
+  <a href="#social">🔗 Social Media</a>
+  <a href="#book">📅 Book Now</a>
+  <a href="#contact">📞 Contact</a>
+  <br>
+  <button onclick="closeMenu()" style="background:#fff;color:#0b7dd6;padding:10px;border-radius:10px;border:0;font-weight:700">
+    Close ✖
+  </button>
+</div>
+
+<div id="overlay" onclick="closeMenu()"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="slide active" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+  <div class="slide" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+  <div class="slide" style="background-image:url('https://cdn.bhdw.net/im/maldives-hotel-wallpaper-80199_w635.webp');"></div>
+</div>
+
+<marquee>★• Welcome to Shri Radha Krishna Yatri Nibas ★</marquee>
+
+<div class="two-box-area">
+
+  <!-- LEFT BOX -->
+  <div class="box">
+    <h2 style="margin-top:0;color:#0b7dd6;">আমাদের সম্পর্কে</h2>
+    <p>
+      শান্ত, পরিচ্ছন্ন এবং সাশ্রয়ী অবস্থান — যেখানে অতিথির স্বাচ্ছন্দ্যই আমাদের প্রধান দায়িত্ব।  
+      যাত্রাপথে একটু বিশ্রাম হোক বা রাত কাটানোর প্রয়োজন —  
+      <b>শ্রী রাধা কৃষ্ণ যাত্রী নিবাস</b> আপনার জন্য সবসময় প্রস্তুত।
+    </p>
+    <p>
+      অতিথিরা চাইলে এখানে বিশ্রাম নিতে, খাবার-দাবার করতে বা রাতেও থাকতে পারবেন।  
+      স্থানীয় পরিবেশ, সহজ যাতায়াত এবং পরিবারের মতো নিরাপত্তা — সব মিলিয়ে  
+      এটি ভ্রমণকারীদের জন্য একটি আদর্শ বিশ্রামস্থল।
+    </p>
+  </div>
+
+  <!-- RIGHT BOX -->
+  <div class="box">
+    <h2 style="margin-top:0;color:#0b7dd6;">কেন আমাদের নির্বাচন করবেন?</h2>
+
+    <ul style="line-height:1.8;margin:0;padding-left:20px;font-size:16px;">
+      <li>✔ ফ্রি Wi-Fi সুবিধা</li>
+      <li>✔ পরিষ্কার পানীয় জলের ব্যবস্থা</li>
+      <li>✔ নিরাপদ Parking Facility</li>
+      <li>✔ স্থায়ী বিদ্যুৎ (Electric Backup)</li>
+      <li>✔ পরিচ্ছন্ন ও আরামদায়ক কক্ষ</li>
+      <li>✔ পরিবার-বান্ধব পরিবেশ</li>
+      <li>✔ স্বল্প খরচে বিশ্রাম ও থাকার সুযোগ</li>
+    </ul>
+
+    <p style="margin-top:10px;">
+      আমাদের লক্ষ্য — প্রতিটি অতিথিকে ঘরের মতো শান্তি ও নিরাপত্তা দেওয়া।  
+      আপনার সফর আরও আরামদায়ক করতে আমরা সর্বদা প্রস্তুত।
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  © Shri Radha Krishna Yatri Nibas | All Rights Reserved
+</footer>
+
+<script>
+  function openMenu(){
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("overlay").style.display="block";
+  }
+  function closeMenu(){
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("overlay").style.display="none";
+  }
+</script>
+  
+  
+  
+  
+  <!-- Popup overlay -->
+<style>
+  :root{
+    --glass: rgba(255,255,255,0.06);
+    --accent: #6EE7B7;
+    --accent2: #60A5FA;
+    --text: #e6eef6;
+    --muted: #bfc9d6;
+  }
+
+  .popup-overlay{
+    position:fixed; inset:0;
+    background:rgba(0,0,0,0.55);
+    display:flex; justify-content:center; align-items:center;
+    padding:20px; z-index:9999;
+    opacity:0; pointer-events:none;
+    transition:0.3s ease;
+  }
+  .popup-overlay.show{
+    opacity:1; pointer-events:auto;
+  }
+
+  .popup-box{
+    width:100%; max-width:420px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:14px;
+    padding:22px;
+    color:var(--text);
+    box-shadow:0 8px 45px rgba(0,0,0,0.5);
+    transform:translateY(20px) scale(0.96);
+    transition:0.35s cubic-bezier(.2,.9,.2,1);
+    position:relative;
+  }
+  .popup-overlay.show .popup-box{
+    transform:none;
+  }
+
+  .popup-close{
+    position:absolute;
+    right:12px; top:12px;
+    width:32px; height:32px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:20px; color:#fff;
+  }
+
+  .popup-title{
+    font-size:20px; margin:10px 0 6px; font-weight:700;
+  }
+  .popup-text{
+    font-size:14px; line-height:1.6; color:var(--muted);
+  }
+
+  .popup-btn{
+    margin-top:16px;
+    width:100%; padding:10px 14px;
+    border:none; border-radius:12px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#041e2f; font-weight:700;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  }
+</style>
+
+<div class="popup-overlay" id="smartPopup">
+  <div class="popup-box">
+    <div class="popup-close" id="popupClose">&times;</div>
+
+    <div class="popup-title">বিশেষ নোটিশ</div>
+    <div class="popup-text">
+      আমাদের ওয়েবসাইটে কাজ চলছে — কয়েকটি ফিচার আপডেট হচ্ছে।  
+      অনুগ্রহ করে একটু অপেক্ষা করুন। 💛  
+    </div>
+
+    <button class="popup-btn">ঠিক আছে</button>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById("smartPopup");
+  const popupClose = document.getElementById("popupClose");
+
+  // Auto show popup after 1.5 sec
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 1500);
+
+  // Close button
+  popupClose.addEventListener("click", () => {
+    popup.classList.remove("show");
+  });
+
+  // Click outside to close
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.classList.remove("show");
+  });
+</script>
+  
+  
+  <!-- Floating Contact Button -->
+  <style>
+    .float-btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#2563eb; /* Smart Blue */
+      color:#fff;
+      width:60px;
+      height:60px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      font-size:30px;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(0,0,0,0.35);
+      z-index:9999;
+      transition:0.3s;
+    }
+    .float-btn:hover{background:#1d4ed8;transform:scale(1.08);}
+
+    .contact-box{
+      position:fixed;
+      bottom:90px;
+      right:20px;
+      background:#ffffff;
+      border-radius:12px;
+      width:200px;
+      padding:14px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.28);
+      display:none;
+      z-index:9999;
+      animation:pop 0.25s ease-out;
+    }
+
+    @keyframes pop{
+      from{transform:scale(0.8);opacity:0;}
+      to{transform:scale(1);opacity:1;}
+    }
+
+    .contact-box a{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin:8px 0;
+      padding:10px;
+      font-weight:600;
+      border-radius:8px;
+      text-decoration:none;
+      color:#fff;
+      transition:0.25s;
+    }
+
+    .call-btn{background:#16a34a;} /* Green */
+    .call-btn:hover{background:#15803d;}
+
+    .wa-btn{background:#22c55e;} /* Light WhatsApp Green */
+    .wa-btn:hover{background:#16a34a;}
+
+    .mail-btn{background:#ef4444;} /* Red */
+    .mail-btn:hover{background:#dc2626;}
+  </style>
+
+  <div class="float-btn" onclick="toggleContact()"><image src="https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-contact-us-mail-call-icons-golden-yellow-contact-us-mail-call-icons-yellow-118008332.jpg" width="55px"style="border-radius:30px;border:20px;"></div>
+  <div class="contact-box" id="contactBox">
+    <a href="tel:+910000000000" class="call-btn">📱 Call Now</a>
+    <a href="https://wa.me/910000000000" class="wa-btn">💬 WhatsApp</a>
+    <a href="mailto:example@mail.com" class="mail-btn">✉ Email</a>
+  </div>
+
+<script>
+  function toggleContact(){
+    const box=document.getElementById('contactBox');
+    box.style.display = box.style.display==='block' ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>
